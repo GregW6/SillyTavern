@@ -2,15 +2,20 @@ module.exports = {
     root: true,
     extends: [
         'eslint:recommended',
+        // 'plugin:@typescript-eslint/recommended-type-checked',
     ],
     plugins: [
         'jsdoc',
+        '@typescript-eslint'
     ],
     env: {
         es6: true,
     },
+    parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaVersion: 'latest',
+        projectService: true,
+        // tsconfigRootDir: __dirname,
     },
     overrides: [
         {
@@ -98,6 +103,7 @@ module.exports = {
         'no-cond-assign': 'error',
         'no-unneeded-ternary': 'error',
         'no-irregular-whitespace': ['error', { skipStrings: true, skipTemplates: true }],
+        '@typescript-eslint/no-deprecated': 'warn',
 
         // These rules should eventually be enabled.
         'no-async-promise-executor': 'off',
